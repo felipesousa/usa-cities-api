@@ -1,6 +1,7 @@
 const express = require('express');
 const fs = require('fs').promises;
 const path = require('path');
+const cors = require('cors');
 const PORT = process.env.PORT || 5000;
 
 const app = express();
@@ -23,6 +24,8 @@ const getData = async () => {
 }
 
 const filterCity = (city, compare, prop = 'city') => compare ? city[prop].includes(compare) : city;
+
+app.use(cors());
 
 app.get('/cities', async (req, res) => {
   try {

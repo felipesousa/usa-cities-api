@@ -1,7 +1,7 @@
 {
   "name": "usa-cities-api",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "./index.js",
   "repository": "https://github.com/felipesousa/usa-cities-api.git",
   "author": "Felipe Sousa <felipzbr@gmail.com>",
   "license": "MIT",
@@ -11,8 +11,8 @@
   "engines": {
     "node": "12.x"
   },
-  "main": "./index.js",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1"
   }
 }
