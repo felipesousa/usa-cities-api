@@ -4,7 +4,10 @@
 
 ### Endpoints
 
+> Base Route: `https://usa-cities-api.herokuapp.com/`
+
 | ROUTE | QUERY PARAMS | DEFAULT | RESPONSE MODEL | TYPE |
 | ----------- | ----------- | ------ | --------- | --- |
 | **cities** | { city: string, state: string } | { city: '', state: '' } | [ { city: string, state: string }] | GET |
 
+Felipe Sousa @ 2020
