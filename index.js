@@ -23,7 +23,8 @@ const getData = async () => {
   }
 }
 
-const filterCity = (city, compare, prop = 'city') => compare ? city[prop].includes(compare) : city;
+const filter = (city, compare, prop = 'city') =>
+  compare ? city[prop].toLowerCase().includes(compare.toLowerCase()) : city;
 
 app.use(cors());
 
@@ -34,8 +35,8 @@ app.get('/cities', async (req, res) => {
 
     const parsed = JSON.parse(response);
     const data = parsed.cities
-      .filter(c => filterCity(c, city))
-      .filter(c => filterCity(c, state, 'state'))
+      .filter(c => filter(c, city))
+      .filter(c => filter(c, state, 'state'));
 
     res.send(data);
   } catch (e) {
@@ -43,4 +44,4 @@ app.get('/cities', async (req, res) => {
   }
 });
 
-app.listen(PORT, () => { console.info('Server running') });
+app.listen(PORT, () => { console.info(`Server running at ${PORT}`); });
